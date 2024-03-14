@@ -1,4 +1,4 @@
-import quizCompleteImg from './../assets/quiz-complete.png';
+import quizCompleteImg from './../assets/quiz-complete-chupito.png';
 import QUESTIONS from './../questions.js';
 
 const Summary = ({ userAnswers }) => {
@@ -18,19 +18,19 @@ const Summary = ({ userAnswers }) => {
   return (
     <div id="summary">
       <img src={quizCompleteImg} alt="Trophy icon" />
-      <h2>Quiz completed!</h2>
+      <h2>¡Quiz completado!</h2>
       <div id="summary-stats">
         <p>
           <span className="number">{skippedAnswersShare}%</span>
-          <span className="text">skipped</span>
+          <span className="text">pasadas</span>
         </p>
         <p>
           <span className="number">{correctAnswersShare}%</span>
-          <span className="text">answered correctly</span>
+          <span className="text">correctas</span>
         </p>
         <p>
           <span className="number">{wrongAnswersShare}%</span>
-          <span className="text">answered incorrectly</span>
+          <span className="text">incorrectas</span>
         </p>
       </div>
       <ol>
@@ -48,7 +48,7 @@ const Summary = ({ userAnswers }) => {
             <li key={index}>
               <h3>{index + 1}</h3>
               <p className="question">{QUESTIONS[index].text}</p>
-              <p className={cssClass}>{answer ?? 'Skipped'}</p>
+              <p className={cssClass}>{answer ?? 'No contestada'}</p>
             </li>
           );
         })}
